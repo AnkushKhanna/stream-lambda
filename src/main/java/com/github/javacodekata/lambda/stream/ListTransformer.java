@@ -42,7 +42,9 @@ public class ListTransformer {
 	 * @return
 	 */
 	public List<Integer> getSortedIntegers() {
-		return values.stream().filter(this::isInteger).mapToInt(Integer::parseInt).sorted().boxed().collect(Collectors.toList());
+		return values.stream().filter(this::isInteger)
+				.mapToInt(Integer::parseInt).sorted()
+				.boxed().collect(Collectors.toList());
 	}
 
 	/**
@@ -56,7 +58,8 @@ public class ListTransformer {
 	 * @return
 	 */
 	public List<Integer> getSortedDescendingIntegers() {
-		return values.stream().filter(this::isInteger).map(Integer::parseInt).sorted((a,b)->b.compareTo(a))
+		return values.stream().filter(this::isInteger)
+				.map(Integer::parseInt).sorted((a,b)->b.compareTo(a))
 				.collect(Collectors.toList());
 	}
 
